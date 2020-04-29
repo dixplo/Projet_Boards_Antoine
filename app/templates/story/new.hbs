@@ -1,0 +1,28 @@
+<div class="ui segment">
+  <div class="ui form">
+    <div class="field">
+      <Input @value={{model.code}} type="text" placeholder="Nom"/>
+    </div>
+    <div class="field">
+      <Input @value={{model.descriptif}} type="text" placeholder="Descriptif"/>
+    </div>
+    <div class="field">
+      {{#ui-dropdown class="selection" onChange=(action (mut model.owner)) as |execute mapper|}}
+        <div class="default text">Proprietaire</div>
+        <i class="dropdown icon"></i>
+        <div class="menu">
+          {{#each model.developers as |developer|}}
+            <div data-value="{{map-value mapper developer}}" class="item">
+              {{developer.identity}}
+            </div>
+          {{/each}}
+        </div>
+      {{/ui-dropdown}}
+    </div>
+    <div class="field">
+      <button class="ui primary button" {{action "nouveau" model.code model.descriptif model.owner model.project}}>Ajouter</button>
+      <button class="ui red button" {{action "retour"}}>Retour</button>
+    </div>
+  </div>
+
+</div>

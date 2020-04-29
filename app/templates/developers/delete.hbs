@@ -1,0 +1,11 @@
+{{outlet}}
+
+<div class="ui segment">
+  <div class="ui form">
+    <div class="field">
+      <h3>Supprimer {{model.identity}} ? </h3>
+    </div>
+    <button class="ui primary button" {{action "supprimer" model}}>Oui</button>
+    <button class="ui red button" {{action "retour" model}}>Retour</button>
+  </div>
+</div>

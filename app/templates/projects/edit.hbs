@@ -1,0 +1,27 @@
+{{outlet}}
+
+<div class="ui segment">
+  <div class="ui form">
+    <div class="field">
+      <div class="fields">
+        <div class="five wide field">
+          <Input @value={{model.project.name}} type="text" placeholder="Nom" value={{model.project.name}}/>
+        </div>
+        <div class="eleven wide field">
+          <Input @value={{model.project.description}} type="text" placeholder="Description" value={{model.project.description}}/>
+        </div>
+      </div>
+      <div class="fields">
+        <div class="four wide field">
+          <Input @value={{model.project.startDate}} type="text" placeholder="Date debut" value={{model.project.startDate}}/>
+        </div>
+        <div class="four wide field">
+          <Input @value={{model.project.dueDate}} type="text" placeholder="Date fin" value={{model.project.dueDate}}/>
+        </div>
+      </div>
+    </div>
+    <button class="ui primary button" {{action "modifier" model.project}}>Modifier</button>
+    <button class="ui red button" {{action "retour"}}>Retour</button>
+
+  </div>
+</div>

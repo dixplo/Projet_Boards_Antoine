@@ -1,0 +1,52 @@
+<center><h2>Projets</h2></center>
+{{outlet}}
+
+<table class="ui fixed padded table">
+  <thead>
+  <tr class="center aligned">
+    <th>Name</th>
+    <th>Description</th>
+    <th>StartDate</th>
+    <th>DueDate</th>
+    <th>Owner</th>
+    <th></th>
+  </tr></thead>
+  <tbody>
+  {{#each model.projects as |projects|}}
+    <tr class="center aligned">
+      <td>{{projects.name}}</td>
+      <td>{{projects.description}}</td>
+      <td>{{projects.startDate }}</td>
+      <td>{{projects.dueDate}}</td>
+      <td>{{projects.owner.identity}}</td>
+      <td class="center aligned">
+        <div class="ui vertical buttons">
+        <LinkTo @route="project" @model={{projects.id}}>
+          <button class="small ui button">
+            Voir
+          </button>
+        </LinkTo>
+        <br>
+        <LinkTo @route="projects.edit" @model={{projects.id}}>
+          <button class="small ui button">
+            Modifier
+          </button>
+        </LinkTo>
+        <br>
+        <LinkTo @route="projects.delete" @model={{projects.id}}>
+          <button class="small ui red button">
+            Supprimer
+          </button>
+        </LinkTo>
+        </div>
+      </td>
+    </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<LinkTo @route="projects.new">
+  <button class="ui primary button">
+    Ajouter projet
+  </button>
+</LinkTo>

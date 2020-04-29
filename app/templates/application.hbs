@@ -1,0 +1,21 @@
+<style>
+  body{
+    background-color:black;
+  }
+</style>
+<div class="ui raised container segment">
+  <center><h1>Projet Boards Antoine et Léo</h1></center>
+  <div class="ui inverted menu">
+    <LinkTo @route="developers">
+      <a class="item" >
+        Développeurs
+      </a>
+    </LinkTo>
+    <LinkTo @route="projects">
+      <a class="item">
+        Projets
+      </a>
+    </LinkTo>
+  </div>
+{{outlet}}
+</div>

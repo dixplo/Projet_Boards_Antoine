@@ -1,0 +1,27 @@
+<center><h1>Projet : {{model.name}}</h1></center>
+
+{{outlet}}
+
+<table class="ui fixed padded table">
+  <thead>
+  <tr class="center aligned">
+    <th>Storie</th>
+    <th>Description</th>
+    <th>Proprietaire</th>
+  </tr></thead>
+  <tbody>
+    {{#each model.stories as |story|}}
+      <tr class="center aligned">
+        <td>{{story.code}}</td>
+        <td>{{story.description}}</td>
+        <td>{{story.developer.identity}}</td>
+      </tr>
+  {{/each}}
+  </tbody>
+</table>
+
+<LinkTo @route="story.new" @model={{model.id}}>
+  <button class="ui primary button">
+    Ajouter storie
+  </button>
+</LinkTo>

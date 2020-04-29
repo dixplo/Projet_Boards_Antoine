@@ -1,0 +1,40 @@
+<center><h2>Développeurs</h2></center>
+
+{{outlet}}
+
+<table class="ui fixed table">
+  <thead>
+  <tr>
+    <th>Nom</th>
+    <th></th>
+  </tr></thead>
+  <tbody>
+  {{#each model as |developer|}}
+    <tr>
+      <td data-label="Last name">{{developer.identity}}</td>
+      <td class="right aligned">
+        <LinkTo @route="developers.edit" @model={{developer.id}}>
+          <button class="ui button">
+            Modifier
+          </button>
+        </LinkTo>
+        <LinkTo @route="developers.delete" @model={{developer.id}}>
+          <button class="ui red button">
+            Supprimer
+          </button>
+        </LinkTo>
+      </td>
+    </tr>
+  {{/each}}
+  <tr>
+  </tr>
+  </tbody>
+</table>
+
+<LinkTo @route="developers.new">
+  <button class="ui primary button">
+    Ajouter développeur
+  </button>
+</LinkTo>
+
+{{outlet developer.identity}}
