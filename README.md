@@ -4,7 +4,7 @@ PPE réalisé par Antoine LEHARIVEL et Leo Doubremelle du 12/03/2020 au 01/05/20
 
 ## Diagram
 
-![Image description](Images/boards.png)
+![Image description](https://slamwiki.kobject.net/_media/slam4/richclient/angularjs/boards.png?cache=)
 
 ## Fonctions 
 
